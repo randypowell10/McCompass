@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.horcrux.svg.SvgPackage;
 import com.reactlibrary.compassheading.CompassHeadingPackage;
 import com.sensors.RNSensorsPackage;
 import com.facebook.react.ReactInstanceManager;
