@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Arrow from './assets/arrow.svg';
+import McArrow from './assets/McArrow.svg';
 
 export const Compass = (props) => {
     const {heading} = props;
@@ -9,8 +10,8 @@ export const Compass = (props) => {
     //     transform: [{ rotate: `${Math.round(heading)}deg` }]
     //   }]}>
     <View style={styles.container}>
-        <View height={300} width={300}>
-            <Arrow height={300} width={300} style={{transform: [{ rotate: `${Math.round(heading)}deg` }], tintColor:'lightblue' }}/>
+        <View height={500} width={500}>
+            <McArrow height={500} width={500} style={{transform: [{ rotate: `${Math.round(heading)}deg` }], tintColor:'orange' }}/>
         </View>
     </View>
   );
