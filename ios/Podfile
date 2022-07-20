@@ -33,6 +33,10 @@ target 'McCompass' do
   #   use_flipper!()
   # end
 
+  pod 'RNSensors', :path => '../node_modules/react-native-sensors'
+
+  pod 'react-native-compass-heading', :path => '../node_modules/react-native-compass-heading'
+
   post_install do |installer|
     react_native_post_install(installer)
     __apply_Xcode_12_5_M1_post_install_workaround(installer)

@@ -1,0 +1,7 @@
+{
+    "root": "C:\\Users\\rp31433\\source\\pod",
+    "node_env": "development",
+    "default_script": "app.js",
+    "apps": {},
+    "web": {}
+}
