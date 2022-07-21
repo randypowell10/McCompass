@@ -17,19 +17,30 @@ export default function App() {
   useEffect(()=>{
       if(location&&currentHeading){
         const nearest = getNearest({x:location.coords.latitude, y:location.coords.longitude});
-        // console.log(nearest)
         const heading = bearing(location.coords.latitude, location.coords.longitude, nearest.lat, nearest.lon);
         setFinalHeading(subtractAngle(heading,currentHeading));
       }
   },[location,currentHeading])
   useEffect(()=>{
-    Location.watchPositionAsync(GEOLOCATION_OPTIONS,(res)=>{
-      setLocation(res);
-    });
-    Location.watchHeadingAsync((res)=>{
-      setCurrentHeading(res.trueHeading)
-    },HEADING_OPTIONS);
+
   },[])
+
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
+
+      Location.watchPositionAsync(GEOLOCATION_OPTIONS,(res)=>{
+        setLocation(res);
+      });
+      Location.watchHeadingAsync((res)=>{
+        setCurrentHeading(res.trueHeading)
+      },HEADING_OPTIONS);
+    })();
+  }, []);
 
   return (
     <Compass heading={finalHeading}/>

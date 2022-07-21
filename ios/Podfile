@@ -33,7 +33,6 @@ target 'McCompass' do
   #   use_flipper!()
   # end
 
-  pod 'RNSensors', :path => '../node_modules/react-native-sensors'
 
   pod 'react-native-compass-heading', :path => '../node_modules/react-native-compass-heading'
 
